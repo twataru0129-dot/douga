@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>お礼状の8つの基本</title>
+  <meta name="description" content="お礼状の8つの構成を約60秒で説明するアニメーション教材">
+  <!-- 読みやすいUDフォント（読み込めない環境では端末のフォントで表示されます） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Klee+One:wght@600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app" id="app">
+    <!-- 映像エリア（16:9）。中身は app.js が教材データから作ります -->
+    <div class="stage" id="stage" role="region" aria-label="アニメーション教材" aria-live="polite">
+      <div class="scene-layer" id="sceneLayer"></div>
+      <div class="paused-badge" id="pausedBadge" hidden>一時停止中</div>
+      <div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+    </div>
+
+    <!-- 操作ボタン（控えめなデザイン） -->
+    <div class="controls" role="toolbar" aria-label="再生の操作">
+      <button type="button" class="ctrl" id="btnRestart" title="最初から見る（Rキー）">
+        <span class="ctrl-icon" data-icon="restart"></span><span>最初から見る</span>
+      </button>
+      <button type="button" class="ctrl" id="btnPlay" title="一時停止／再生（スペースキー）">
+        <span class="ctrl-icon" data-icon="pause"></span><span class="ctrl-label">一時停止</span>
+      </button>
+      <span class="time" id="time" aria-hidden="true">0:00 / 1:00</span>
+      <span class="spacer"></span>
+      <button type="button" class="ctrl" id="btnRuby" aria-pressed="true" title="ふりがなの表示／非表示（Fキー）">ふりがな</button>
+      <button type="button" class="ctrl ctrl-square" id="btnFull" title="全画面表示" aria-label="全画面表示">
+        <span class="ctrl-icon" data-icon="fullscreen"></span>
+      </button>
+    </div>
+  </main>
+
+  <noscript><p class="noscript">この教材を見るには JavaScript を有効にしてください。</p></noscript>
+
+  <!-- アイコン → 教材データ → 表示プログラム の順に読み込みます -->
+  <script src="assets/icons.js"></script>
+  <script src="assets/lessons/thank-you-letter.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
